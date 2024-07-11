@@ -25,7 +25,7 @@ class ListPersonneState extends State<ListPersonne> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Personnes"),
+          title: const Text("Personnes"),
         ),
         body: Stack(
           children: [
@@ -47,7 +47,7 @@ class ListPersonneState extends State<ListPersonne> {
                     Navigator.pushNamed(context, '/newpersonne')
                         .then((value) => setState(() {}));
                   },
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 ),
               ),
             )
@@ -71,19 +71,19 @@ class PersonneItemWidget extends StatelessWidget {
       //   );
       // },
       child: Card(
-          margin: EdgeInsets.all(8),
+          margin: const EdgeInsets.all(8),
           elevation: 8,
           child: Row(
             children: [
               Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                           padding: const EdgeInsets.only(bottom: 8),
                           child: Text(personne.nom,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20))),
                       Text(
                         personne.prenom,

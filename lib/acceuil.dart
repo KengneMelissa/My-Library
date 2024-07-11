@@ -27,6 +27,14 @@ class Acceuil extends StatelessWidget {
                 child: const Text("Affichage")),
             centerTitle: true,
             backgroundColor: Color.fromARGB(155, 20, 133, 196),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/countries');
+                },
+                icon: const Icon(Icons.public),
+              ),
+            ],
           ),
           body: const TabBarView(
             children: [

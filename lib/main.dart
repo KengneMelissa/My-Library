@@ -1,6 +1,8 @@
 import 'package:exercice1/acceuil.dart';
+
 import 'package:exercice1/empruntform.dart';
 import 'package:exercice1/list_livre.dart';
+import 'package:exercice1/listcountries.dart';
 import 'package:exercice1/liste_personne.dart';
 import 'package:exercice1/listemprunt.dart';
 import 'package:exercice1/livreform.dart';
@@ -8,10 +10,12 @@ import 'package:exercice1/personneform.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -24,14 +28,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
-          appBar: AppBar(
-            title: Container(
-                padding: const EdgeInsets.all(10),
-                child:const Text("MA BIBLIOTHEQUE")),
-            centerTitle: true,
-            backgroundColor: Colors.blue,
-          ),
-          body: const Acceuil()),
+        appBar: AppBar(
+          title: Container(
+              padding: const EdgeInsets.all(10),
+              child: const Text("MA BIBLIOTHEQUE")),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+        ),
+        body: const Acceuil(),
+      ),
     );
   }
 }
@@ -55,6 +60,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const LivreForm());
       case '/newemprunt':
         return MaterialPageRoute(builder: (context) => const EmpruntForm());
+      case '/countries':
+        return MaterialPageRoute(builder: (context) => ListCountries());
 
       default:
         return MaterialPageRoute(
